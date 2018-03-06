@@ -19,7 +19,7 @@ export class RoomList extends Component {
 
 render() {
 
-  this.state.rooms.map(room);
+  this.state.rooms.map();
 
   return(
     <div>
