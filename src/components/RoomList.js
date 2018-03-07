@@ -15,14 +15,16 @@ export class RoomList extends Component {
     });
   }
 
+
+  render () {
+    return (
+        <div>
+          {
+            this.state.rooms.map( (room, index) =>
+              <li className="room" key={index}>{room.name}</li>
+            )
+          }
+        </div>
+    );
+  }
 }
-
-render() {
-
-  this.state.rooms.map();
-
-  return(
-    <div>
-    </div>
-  )
-};
