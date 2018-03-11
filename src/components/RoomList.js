@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class RoomList extends Component {
+class RoomList extends Component {
   constructor(props) {
     super(props);
       this.state = {
@@ -18,17 +18,18 @@ export class RoomList extends Component {
   }
 
 
-  render () {
+  render(){
     return (
-        <div>
-        {this.state.rooms.map ((room, i) => (  //to loop over the room array to render its contents Q: why state and not props?
-        <li key={room.key}>{room.name}</li>
-            // {this.state.rooms.map ((room) => (  //to loop over the room array to render its contents
-              // <h1>{room.key}</h1>
-        ))}
-        </div>
-    );
-  }
+      <div>
+        <ul>
+         {this.state.rooms.map( (room, key) => (
+           <li key={key}>{room.name}</li>
+          )
+         )}
+        </ul>
+      </div>
+    )
+  };
 }
 
 export default RoomList;
