@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import * as firebase from 'firebase';
-import { RoomList } from './components/RoomList.js';
+import RoomList from './components/RoomList.js';
 
 var config = {
   apiKey: "AIzaSyAe2jTRgHYTrqM08Uq4R8CWei3GgrKpDCk",
@@ -23,7 +23,9 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          <RoomList
+            firebase={firebase}
+          />
         </p>
       </div>
     );
