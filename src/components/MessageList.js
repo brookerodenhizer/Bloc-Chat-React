@@ -42,7 +42,7 @@ render() {
   <div>
     <div className="message-list">
       <div>
-        <h2>Room {this.props.currentRoom}</h2>
+        <h2>Room {this.props.currentRoom.newRoomName}</h2>
         <form id="create-message" onSubmit={ (e) => { e.preventDefault(); this.createMessage(this.state.newMessage, this.props.currentRoom) } }>
               <input type="text" value={ this.state.newMessage } onChange={ (e) => { this.handleChange(e) } }  name="newMessage" />
               <input type="submit" value="Send"/>

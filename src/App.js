@@ -24,6 +24,8 @@ class App extends Component {
         currentRoomId: 1,
         user: 0
       };
+
+    this.openRoom = this.openRoom.bind(this);
   }
 
   openRoom(room) {
@@ -38,7 +40,7 @@ class App extends Component {
           <h1 className="App-title">Bloc Chat</h1>
         </header>
         <section className="App-rooms">
-          <RoomList firebase= {firebase} currentRoom={this.state.currentRoomId} openRoom={(room) => {this.openRoom(room)} } user={this.state.user} />
+          <RoomList firebase= {firebase} currentRoom={this.state.currentRoomId} openRoom={this.openRoom} user={this.state.user} />
           <MessageList firebase= {firebase} currentRoom={this.state.currentRoomId} user={this.state.user} />
         </section>
       </div>
