@@ -36,7 +36,7 @@ export class RoomList extends Component {
       </form>
     );
     const roomList = this.state.rooms.map((room) =>
-      <li key={room.key} onClick={(e, room) => this.props.openRoom(room)}>{room.newRoomName}</li>
+      <li key={room.key} onClick={(e) => this.props.openRoom(room)}>{room.newRoomName}</li>
     );
 
     return (
