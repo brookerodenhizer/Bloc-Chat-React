@@ -26,12 +26,12 @@ handleChange(event) {
 }
 componentWillReceiveProps(nextProps) {
     const currentRoom = nextProps.currentRoom;
-    this.setState({ currentMessages: this.state.messages.filter( message => message.roomId === currentRoom)});
+    this.setState({ currentMessages: this.state.messages.filter( message => message.roomId === currentRoom.key)});
 }
 createMessage(newMessage, currentRoom) {
     this.messagesRef.push({
     content: newMessage,
-    roomId: this.props.currentRoom,
+    roomId: this.props.currentRoom.key,
     user: this.props.user ? this.props.user.displayName : 'Guest',
     sentAt: this.props.firebase.database.ServerValue.TIMESTAMP
   },
