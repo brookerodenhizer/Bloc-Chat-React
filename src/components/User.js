@@ -24,7 +24,6 @@ class User extends Component {
 
   signOut() {
     this.props.firebase.auth().signOut().then(() => {
-      this.props.setUser(null);
     })
   }
 
