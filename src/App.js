@@ -33,6 +33,10 @@ class App extends Component {
     this.setState({currentRoomId: room});
   }
 
+  setUser(user) {
+    this.setState({ user: user });
+  }
+
   render() {
     return (
       <div className="App">
@@ -43,7 +47,7 @@ class App extends Component {
         <section className="App-rooms">
           <RoomList firebase= {firebase} currentRoom={this.state.currentRoomId} openRoom={this.openRoom} user={this.state.user} />
           <MessageList firebase= {firebase} currentRoom={this.state.currentRoomId} user={this.state.user} />
-          <User firebase= {firebase} user={this.state.user} />
+          <User firebase= {firebase} setUser={this.setUser.bind(this)} user={this.state.user}/>
         </section>
       </div>
     );

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as firebase from 'firebase';
 
 class User extends Component {
   constructor (props) {
@@ -22,8 +21,7 @@ class User extends Component {
   }
 
   signOut() {
-    this.props.firebase.auth().signOut().then(() => {
-    })
+    this.props.firebase.auth().signOut();
   }
 
   render() {
