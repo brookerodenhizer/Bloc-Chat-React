@@ -7,12 +7,13 @@ constructor (props) {
     this.state = {
       messages: [],
       currentMessages: [],
-      user: "",
+      user: this.props.currentUser,
       content: "",
       sentAt: "",
       newMessage: "",
    };
 this.messagesRef = this.props.firebase.database().ref('messages');
+this.createMessage = this.createMessage.bind(this);
 }
 componentDidMount() {
     this.messagesRef.on('child_added', snapshot => {
