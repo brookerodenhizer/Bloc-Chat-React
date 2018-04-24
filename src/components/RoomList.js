@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './RoomList.css';
 
 export class RoomList extends Component {
   constructor(props) {
